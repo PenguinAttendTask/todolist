@@ -1,0 +1,16 @@
+h1 予定の編集
+
+.nav.justify-content-end
+  = link_to '一覧へ戻る', todos_path, class: 'nav-link'
+
+= form_with model: @todo, local: true do |f|
+  .form-group
+    = f.label :name
+    = f.text_field :name, class: 'form-control', id: 'todo_name'
+  .form-group
+    = f.label :description
+    = f.text_field :description, class: 'form-control', id: 'todo_description'
+  .form-group
+    = f.label :deadline, class: 'control-label'
+    = f.date_field :deadline, class: 'form-control'
+  = f.submit nil, class: 'btn btn-primary'

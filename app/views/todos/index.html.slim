@@ -1,0 +1,18 @@
+h1 予定一覧
+
+= link_to '予定を登録する', new_todo_path, class: 'btn btn-primary'
+
+.mb-3
+table.table.table-hover
+  thead.thead-default
+    tr
+      th= Todo.human_attribute_name(:name)
+      th= Todo.human_attribute_name(:deadline)
+  tbody
+    - @todos.each do |todo|
+      tr
+        td= link_to todo.name, todo
+        td= todo.deadline
+        td
+          = link_to '編集', edit_todo_path(todo), class: 'btn btn-primary mr-3'
+          = link_to '削除', todo, method: :delete, data: { confirm: "予定「#{todo.name}」を削除します。よろしいですか？" }, class: 'btn btn-danger'
