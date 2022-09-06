@@ -1,12 +1,10 @@
 h1 予定の詳細
 
 .nav.justify-content-end
-  = link_to '一覧へ戻る', todos_path, class: 'nav-link'
+  = link_to '一覧へ戻る', todos_path, class: 'btn btn-secondary mr-5'
+
 table.table.table-hover
   tbody
-    tr
-      th= Todo.human_attribute_name(:id)
-      td= @todo.id
     tr
       th= Todo.human_attribute_name(:name)
       td= @todo.name
@@ -16,7 +14,13 @@ table.table.table-hover
     tr 
       th= Todo.human_attribute_name(:deadline)
       td= @todo.deadline
+    tr
+      th= Todo.human_attribute_name(:deadtime)
+      td= l @todo.deadtime
+    tr
+      th= Todo.human_attribute_name(:place)
+      td= @todo.place
 
 = link_to '編集', edit_todo_path, class: 'btn btn-primary mr-3'
-= link_to '削除', @todo, method: :delete, data: { confirm: "予定「#{@todo.name}」を削除します。よろしいですか？" }, class: 'btn btn-danger'
+= link_to '削除', @todo, method: :delete, data: { confirm: "予定「#{@todo.name}」を削除します。よろしいですか？" }, class: 'btn btn-danger m-3'
 
