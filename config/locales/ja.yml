@@ -15,7 +15,7 @@ ja:
         name: タスク
         description: 詳細
         deadline: 日付
-        deadtime: 時間
+        deadtime: 期限
         place: 場所
         created_at: 登録日時
         updated_at: 更新日時
